@@ -1,0 +1,159 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+  
+    
+  }
+  
+  
+  nav {
+    background-color:black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+   
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size:1rem;
+  }
+  
+  
+    
+  
+  
+  
+  .nav-links a {
+    text-decoration:none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  
+  .nav-links a:hover {
+    color:#74889e;
+  }
+  
+  
+  #searchInput {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  #searchBtn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  #searchBtn:hover {
+    background-color: #74889e;
+  }
+  
+  
+  .dashboard {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid rgb(248, 227, 227);
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  
+  .genre-btn {
+    
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .add-book-form {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  
+  .add-book-form h2 {
+    display:block;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+  }
+  
+  .add-book-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .add-book-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  #addBookBtn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  #addBookBtn:hover {
+    background-color: #c5cad0;
+  }
+  
+  #bookList {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  #bookList li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .selected-books {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid rgb(248, 227, 227);
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  
+  
+  
+  
+  
+  
