@@ -1,67 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dashboard.css">
   <title>My Dashboard</title>
 </head>
+
 <body>
   <nav>
     <div class="logo">My Library</div>
     <ul class="nav-links">
       <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+      <a href="#">Contact Us</a>
       <button><input type="text" id="searchInput" placeholder="Search books"></button>
       <button id="searchBtn">Search</button>
     </ul>
   </nav>
-  
+
   <div class="dashboard">
     <h1>My Book Collection</h1>
 
-   
-      <button class="genre-btn" >Fantasy</button>
-      <button class="genre-btn" >Mystery</button>
-      <button class="genre-btn">Science Fiction</button>
-    
 
-  <form onsubmit ="" >
-    <div class="add-book-form" id = "add-book-form">
-      <h2>Add Book</h2>
-      <label for="bookTitle">Title:</label>
-      <input type="text" id="bookTitle" required>
-      <label for="bookAuthor">Author:</label>
-      <input type="text" id="bookAuthor" required>
-      <button  type ="Submit" id="addBookBtn">Add Book</button>
-    </div>
-  </form>
-</div>
- 
-<div clas="selected-boks " id="selected-books">
-  <h2>Selected Books</h2>
+    <button class="genre-btn">Fantasy</button>
+    <button class="genre-btn">Mystery</button>
+    <button class="genre-btn">Science Fiction</button>
 
-
-</div>
-
-
+    <form onsubmit="addBookToLibrary(event)">
+      <div class="add-book-form" id="add-book-form">
+        <h2>Add Book</h2>
+        <label for="bookTitle">Title:</label>
+        <input type="text" id="bookTitle" required>
+        <label for="bookAuthor">Author:</label>
+        <input type="text" id="bookAuthor" required>
+        <button type="submit" id="addBookBtn">Add Book</button>
+      </div>
+    </form>
+  </div>
   
+  <h2>Books List</h2>
+  <ul id="booksList"></ul>
 
-    
-  
-
-  
-
-
-
-  <script src="dashboard.js"></script>
+  <script defer src="dashboard.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-  

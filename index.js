@@ -1,49 +1,26 @@
-/*const users = [
-    
-    { username:'Ann_Roy',password:'123' },
-    {username:'Kevin_John',password:'456'},
+const users = [
+    { username: "Ann_Roy", password: "123" },
+    { username: "Kevin_John", password: "456" },
+    { username: "Sam", password: "123"},
 ];
-const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-function login(event){
-    event.preventDefault()
-  const username = document.getElementById("username").value;
-   const password = document.getElementById("password").value;
-   const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-            const userFound = storedUsers.some(user => user.username === username && user.password === password);
+localStorage.setItem("users", JSON.stringify(users));
 
-            if (userFound) {
-                console.log("Login successful. Redirecting...");
-                window.location.href = "dashboard.html";
-            } else {
-                console.log("Login failed.");
-                alert("Login failed. Please check your credentials.");
-            }
-        }*/
+function login(event) {
+    event.preventDefault();
 
-        const users = [
-            { username: "Ann_Roy", password: "123" },
-            { username: "Kevin_John", password: "456" },
-            // Add more user objects as needed
-        ];
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-        localStorage.setItem("users", JSON.stringify(users));
+    // When retrieving the data:
+    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-        function login(event) {
-            event.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            // When retrieving the data:
-            const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-            const userFound = storedUsers.some(user => user.username === username && user.password === password);
-            if (userFound) {
-                console.log("Login successful. Redirecting...");
-                window.location.href = "dashboard.html";
-            } else {
-                console.log("Login failed.");
-                alert("Login failed. Please check your credentials.");
-            }
-        }
+    const userFound = storedUsers.some(user => user.username === username && user.password === password);
+    if (userFound) {
+        console.log("Login successful. Redirecting...");
+        window.location.href = "dashboard.html";
+    } else {
+        console.log("Login failed.");
+        alert("Login failed. Please check your credentials.");
+    }
+}

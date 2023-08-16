@@ -1,37 +1,39 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const books = [];
+function addBookToLibrary() {
 
-    const bookForm = document.getElementById("add-book-form");
-  const booksList = document.getElementById("selected-books");
+    const bookTitle = bookTitleInput.value;
+    const bookAuthor = bookAuthorInput.value;
 
-    bookForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+    if (bookTitle && bookAuthor) {
+        let books = JSON.parse(localStorage.getItem("books")) || [];
+        books.push({ title: bookTitle, author: bookAuthor });
+        localStorage.setItem("books", JSON.stringify(books));
 
-        const title = document.getElementById("bookTitle");
-        const author = document.getElementById("bookAuthor").value;
+        bookTitleInput.value = "";
+        bookAuthorInput.value = "";
 
-        if (title.value.trim() === "" || author.trim() === "") {
-            alert("Please fill in all fields");
-            return;
-        }
-
-        const book = {
-            title: title,
-            author: author,
-        };
-
-        books.push(book);
         displayBooks();
-        bookForm.reset();
-    });
-
-    function displayBooks() {
-        booksList.innerHTML = "";
-
-        books.forEach(function(book) {
-            const li = document.createElement("li");
-            li.innerHTML = `<strong>${book.title}</strong> by ${book.author}`;
-            booksList.appendChild(li);
-        });
     }
+}
+
+function displayBooks() {
+    const books = JSON.parse(localStorage.getItem("books")) || [];
+    booksList.innerHTML = "";
+    books.forEach(book => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${book.title} by ${book.author}`;
+        booksList.appendChild(listItem);
+    });
+}
+
+// Get references to elements
+const bookTitleInput = document.getElementById("bookTitle");
+const bookAuthorInput = document.getElementById("bookAuthor");
+const booksList = document.getElementById("booksList");
+const addBookForm = document.getElementById("add-book-form");
+
+addBookForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    addBookToLibrary();
 });
+
+displayBooks();
